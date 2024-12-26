@@ -1,0 +1,94 @@
+.products ul {
+  list-style-type: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px;
+  max-width: 1200px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.product:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 300px;
+  border-bottom: 1px solid #e0e0e0;
+  display: block; 
+  margin: 0 auto;
+}
+
+.product_info {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.product_info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 100%; 
+}
+
+.product_info p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  max-width: 100%; 
+}
+
+.product_info p:nth-child(3) {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.product_info button {
+  background-color: #5cbb30 ;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+}
+
+.product_info button:hover {
+  background-color: #69d836; 
+}
+
+.product_info button svg {
+  width: 16px;
+  height: 16px;
+}
