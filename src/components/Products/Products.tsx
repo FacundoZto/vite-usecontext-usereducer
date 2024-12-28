@@ -18,11 +18,11 @@ const Products: React.FC<ProductsProps> = ({ products, onAddToCart }) => {
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <p>$ {product.price}</p>
+            </div>
               <button onClick={() => onAddToCart(product)}>
                 <AddToCartIcon />
                 Add to cart
               </button>
-            </div>
           </li>
         ))}
       </ul>

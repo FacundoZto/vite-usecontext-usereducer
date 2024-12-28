@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products?limit=5')
+    fetch('/api/products?limit=8')
     .then(res=>res.json())
     .then(json=> {
       setProducts(json)

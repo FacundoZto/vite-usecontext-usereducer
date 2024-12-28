@@ -1,18 +1,20 @@
+.products{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .products ul {
   list-style-type: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 30px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 20px;
-  max-width: 1200px;
 }
 
 .product {
-  display: flex;
-  flex-direction: column;
-  max-width: 350px;
   background-color: #fff;
   border: 1px solid #e0e0e0; 
   border-radius: 8px; 
@@ -24,20 +26,17 @@
 .product:hover {
   transform: translateY(-5px); 
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
-}
+} 
 
 .product img {
   width: 100%;
-  height: auto;
+  height: 260px;
   object-fit: contain;
-  max-height: 300px;
-  border-bottom: 1px solid #e0e0e0;
-  display: block; 
+  border-bottom: 1px solid #e0e0e0; 
   margin: 0 auto;
 }
 
 .product_info {
-  flex-grow: 1;
   padding: 15px;
 }
 
@@ -46,20 +45,24 @@
   font-weight: 600;
   color: #333;
   margin-bottom: 10px;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-  max-width: 100%; 
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 1; 
+  line-clamp: 1; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .product_info p {
   font-size: 14px;
   color: #777;
   margin-bottom: 10px;
-  white-space: nowrap; 
-  overflow: hidden;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2; 
+  line-clamp: 2; 
+  overflow: hidden; 
   text-overflow: ellipsis; 
-  max-width: 100%; 
 }
 
 .product_info p:nth-child(3) {
@@ -68,13 +71,14 @@
   font-weight: bold;
 }
 
-.product_info button {
+.product button {
   background-color: #5cbb30 ;
   color: #fff;
   padding: 10px 20px;
+  margin: 0 0 15px 15px;
   font-size: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -84,11 +88,13 @@
   margin-top: auto;
 }
 
-.product_info button:hover {
+.product button:hover {
   background-color: #69d836; 
 }
 
-.product_info button svg {
+.product button svg {
   width: 16px;
   height: 16px;
+  stroke-width: 2px;
+  stroke: currentColor;
 }
