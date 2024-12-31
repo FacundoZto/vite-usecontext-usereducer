@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react';
 import Products from './components/Products/Products';
 import HashLoader from "react-spinners/HashLoader";
+import { Filters, Product } from './Interfaces/Product';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState<Filters>({
+    category: 'all',
+    minPrice: 0,
+  });
 
   useEffect(() => {
     fetch('/api/products?limit=8')
@@ -15,6 +20,16 @@ function App() {
     });
   }, []);
 
+  const filterProducts =( products: Product[] ) => {
+    return products.filter( product => {
+      return product.price >= filters.minPrice && (
+        filters.category === 'all' || product.category === filters.category
+      );
+    })
+  };
+
+  const filteredProducts = filterProducts(products);
+
   return (
     <>
       <HashLoader 
@@ -22,7 +37,7 @@ function App() {
         color='#77f43c' 
         loading={loading} 
       />
-      <Products products={products} onAddToCart={(product) => console.log(product)} />
+      <Products products={filteredProducts} onAddToCart={(product) => console.log(product)} />
     </>
   )
 }
