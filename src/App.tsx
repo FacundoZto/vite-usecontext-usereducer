@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Products from './components/Products/Products';
 import HashLoader from "react-spinners/HashLoader";
 import { Filters, Product } from './Interfaces/Product';
+import Header from './components/Header/Header';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -37,6 +38,7 @@ function App() {
         color='#77f43c' 
         loading={loading} 
       />
+      <Header />
       <Products products={filteredProducts} onAddToCart={(product) => console.log(product)} />
     </>
   )
