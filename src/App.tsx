@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import Products from './components/Products/Products';
 import HashLoader from "react-spinners/HashLoader";
-import { Filters, Product } from './Interfaces/Product';
+import { FiltersType, Product } from './Interfaces/Product';
 import Header from './components/Header/Header';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState<Filters>({
+  const [filters, setFilters] = useState<FiltersType>({
     category: 'all',
     minPrice: 0,
   });
@@ -38,7 +38,7 @@ function App() {
         color='#77f43c' 
         loading={loading} 
       />
-      <Header />
+      <Header setFilters={setFilters}/>
       <Products products={filteredProducts} onAddToCart={(product) => console.log(product)} />
     </>
   )

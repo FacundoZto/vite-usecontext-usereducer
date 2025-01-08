@@ -7,7 +7,7 @@ export interface Product {
   category?: string;
 }
 
-export interface Filters {
+export interface FiltersType {
   minPrice: number;
   category: string;
 }
