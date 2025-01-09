@@ -1,15 +1,8 @@
-import Filters from '../Filters/Filters';
-import {FiltersType} from '../../Interfaces/Product';
-
-type HeaderProps = {
-  setFilters: React.Dispatch<React.SetStateAction<FiltersType>>;
-};
-
-const Header: React.FC<HeaderProps> = ({setFilters}) => {
+const Header: React.FC<{ children: React.ReactNode }> = ({children}) => {
   return (
     <header>
       <h1>React list 🛒</h1>
-      <Filters setFilters={setFilters} />
+      {children}
     </header>
   );
 };
