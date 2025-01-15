@@ -4,11 +4,13 @@ import HashLoader from "react-spinners/HashLoader";
 import useFilters from './components/Hooks/FilterProducts';
 import Header from './components/Header/Header';
 import Filters from './components/Filters/Filters';
+import Footer from './components/Footer/Footer';
+import { IS_DEVELOPMENT } from './config';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
-  const { filterProducts, setFilters } = useFilters();
+  const { filters, filterProducts, setFilters } = useFilters();
 
   useEffect(() => {
     fetch('/api/products?limit=8')
@@ -33,6 +35,7 @@ function App() {
         <Filters setFilters={setFilters} />
       </Header>
       <Products products={filteredProducts} onAddToCart={(product) => console.log(product)} />
+      {IS_DEVELOPMENT && <Footer filters={filters} />}
     </>
   )
 }

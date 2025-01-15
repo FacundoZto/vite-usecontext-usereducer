@@ -16,7 +16,7 @@ const useFilters = () => {
      })
    };
 
-   return {filterProducts, setFilters};
+   return {filters, filterProducts, setFilters};
 
 };
 
